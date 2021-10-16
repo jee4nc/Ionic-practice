@@ -17,7 +17,8 @@ export class Tab2Page {
     this.weatherService.getWeather()
     .then(respuesta => {
       console.log(respuesta);
-      this.listWeather = respuesta.data;
+      this.listWeather = respuesta;
+      console.log(this.listWeather);
     },
     (error) => {
       console.log(error);
