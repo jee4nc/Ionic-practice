@@ -9,6 +9,8 @@ import { WeatherService } from '../services/weather.service';
 export class Tab2Page {
 
   listWeather: any;
+  temp: any;
+  celciusTemp: any;
   constructor(private weatherService: WeatherService) {
     this.obtenerWeather();
   }
@@ -18,11 +20,18 @@ export class Tab2Page {
     .then(respuesta => {
       console.log(respuesta);
       this.listWeather = respuesta;
+      this.temp = respuesta.main.temp;
       console.log(this.listWeather);
+      this.convertCelcius(this.temp);
     },
     (error) => {
       console.log(error);
     }
     );
   }
+
+  convertCelcius(temp) {
+     this.celciusTemp = ((temp - 32) * 5/9);
+  }
+
 }

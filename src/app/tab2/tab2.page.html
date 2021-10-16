@@ -13,6 +13,7 @@
     </ion-toolbar>
   </ion-header>
       <h1 *ngIf="listWeather"> {{listWeather.name}} </h1>
+      <h2 *ngIf="listWeather"> {{celciusTemp}}</h2>
       <h3 *ngIf="listWeather"> {{listWeather.weather[0].main}} </h3>
       <h4 *ngIf="listWeather"> {{listWeather.weather[0].description}} </h4>
   <app-explore-container name="Check the weather here!"></app-explore-container>
