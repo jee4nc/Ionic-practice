@@ -93,7 +93,7 @@ export class Tab3Page {
       console.log("Segundo valor : " + this.secondValue);
     }
 
-    if (this.secondCode === 'EURO ') {
+    if (this.secondCode === 'EURO') {
       this.secondValue = this.valueEur;
       // eslint-disable-next-line @typescript-eslint/quotes
       console.log("Segundo valor : " + this.secondValue);
