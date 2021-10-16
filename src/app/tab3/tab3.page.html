@@ -48,7 +48,10 @@
     </div>
   </ion-item>
 
-  <h2 *ngIf="result"> {{result}} </h2>
+  <div class="divbutton">
+    <h2 *ngIf="result"> {{result}} </h2>
+    <h3>💰</h3>
+  </div>
 
     <div  style="padding-top: 2vh;" class="divbutton">
       <ion-button   color="primary" (click)="calculate()" >Convert</ion-button>

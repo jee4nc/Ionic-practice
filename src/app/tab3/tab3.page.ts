@@ -103,5 +103,6 @@ export class Tab3Page {
   calculate() {
      const v1 = this.firstValue * this.input1;
      this.result = v1 / this.secondValue;
+     this.result = parseFloat(this.result).toFixed(2);
   }
 }

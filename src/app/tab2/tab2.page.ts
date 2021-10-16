@@ -22,16 +22,11 @@ export class Tab2Page {
       this.listWeather = respuesta;
       this.temp = respuesta.main.temp;
       console.log(this.listWeather);
-      this.convertCelcius(this.temp);
     },
     (error) => {
       console.log(error);
     }
     );
-  }
-
-  convertCelcius(temp) {
-     this.celciusTemp = ((temp - 32) * 5/9);
   }
 
 }

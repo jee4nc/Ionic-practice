@@ -12,9 +12,15 @@
       <ion-title size="large">Weather</ion-title>
     </ion-toolbar>
   </ion-header>
-      <h1 *ngIf="listWeather"> {{listWeather.name}} </h1>
-      <h2 *ngIf="listWeather"> {{celciusTemp}}</h2>
-      <h3 *ngIf="listWeather"> {{listWeather.weather[0].main}} </h3>
-      <h4 *ngIf="listWeather"> {{listWeather.weather[0].description}} </h4>
-  <app-explore-container name="Check the weather here!"></app-explore-container>
+  <div style="padding-top: 4vh;">
+    <h1 style="padding-bottom: 2vh;" class="divtitles" *ngIf="listWeather">City : {{listWeather.name}} 🇨🇱 </h1>
+    <h4 class="divtitles" *ngIf="listWeather"> Actual Temp 🌎</h4>
+    <h4 class="divtitles" *ngIf="listWeather"> {{temp}}°Celcius</h4>
+    <h4 class="divtitles" *ngIf="listWeather"> Min Temp 🧊 </h4>
+    <h4 class="divtitles" *ngIf="listWeather">{{listWeather.main.temp_min}}°Celcius</h4>
+    <h4 class="divtitles" *ngIf="listWeather"> Max Temp 🌡</h4>
+    <h4 class="divtitles" *ngIf="listWeather">{{listWeather.main.temp_max}}°Celcius</h4>
+    <h3 class="divtitles" *ngIf="listWeather"> {{listWeather.weather[0].main}} </h3>
+    <h4 class="divtitles" *ngIf="listWeather"> {{listWeather.weather[0].description}} </h4>
+  </div>
 </ion-content>
