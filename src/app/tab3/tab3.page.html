@@ -13,5 +13,45 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Check differents currencys here "></app-explore-container>
+  <div class="container_values">
+    <div float-right class="myselection" style="justify-content: center;">
+      <h3 *ngIf="valueDolar"> Valor Dolar : {{valueDolar}} 💵</h3>
+    </div>
+    <div float-right class="myselection" style="justify-content: center;">
+      <h3 *ngIf="valueEur"> Valor Euro: {{valueEur}} 💵</h3>
+    </div>
+  </div>
+
+  <ion-item>
+    <div [formGroup]="myGroup">
+      <ion-label>Select first currency</ion-label>
+      <ion-select style="width: 100vw;" placeholder="Select one pls" formControlName="fvalue" (ionChange)="fvalueChange($event)" >
+        <ion-select-option  value="CLP" >Chilean peso</ion-select-option>
+        <ion-select-option value="DOLAR" >Dolars</ion-select-option>
+        <ion-select-option value="EURO" >Euro</ion-select-option>
+      </ion-select>
+    </div>
+  </ion-item>
+
+  <div style=" padding-bottom: 2vh; padding-top: 2vh;">
+    <ion-input type="number"  placeholder="Insert your ammount to convert here 👈" [(ngModel)]="input1" value="first"></ion-input>
+  </div>
+
+  <ion-item>
+    <div [formGroup]="secondGroup">
+      <ion-label>Select second currency</ion-label>
+      <ion-select placeholder="Select one pls" style=" width: 100vw;" formControlName="svalue" (ionChange)="svalueChange($event)">
+        <ion-select-option value="CLP" >Chilean peso</ion-select-option>
+        <ion-select-option value="DOLAR" >Dolars</ion-select-option>
+        <ion-select-option value="EURO" >Euro</ion-select-option>
+      </ion-select>
+    </div>
+  </ion-item>
+
+  <h2 *ngIf="result"> {{result}} </h2>
+
+    <div  style="padding-top: 2vh;" class="divbutton">
+      <ion-button   color="primary" (click)="calculate()" >Convert</ion-button>
+    </div>
+
 </ion-content>
