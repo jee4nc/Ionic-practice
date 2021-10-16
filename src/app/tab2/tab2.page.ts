@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WeatherService } from '../services/weather.service';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +8,20 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  listWeather: any;
+  constructor(private weatherService: WeatherService) {
+    this.obtenerWeather();
+  }
 
+  obtenerWeather() {
+    this.weatherService.getWeather()
+    .then(respuesta => {
+      console.log(respuesta);
+      this.listWeather = respuesta.data;
+    },
+    (error) => {
+      console.log(error);
+    }
+    );
+  }
 }
